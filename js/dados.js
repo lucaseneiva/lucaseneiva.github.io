@@ -26,7 +26,7 @@ const projetos = [
         tech: "NestJS, Flutter, TypeORM",
         descricao: "Solução Multi-tenant onde o app adapta o tema baseado no domínio de acesso.",
         imagem: "img/ecommerce.png",
-        link: "https://github.com/lucaseneiva",
+        link: "https://github.com/lucaseneiva/ecommerce-whitelabel-2025",
         
     },
     {
