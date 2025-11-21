@@ -1,0 +1,303 @@
+:root {
+    --bg-color: #f0f2f5;
+    --card-bg: #ffffff;
+    --text-primary: #202124;
+    --text-secondary: #5f6368;
+    --accent-color: #01875f; 
+    --linkedin-color: #0077b5;
+    --github-color: #24292e;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* --- CABEÇALHO GERAL --- */
+.profile-header {
+    background-color: var(--card-bg);
+    width: 100%;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08); 
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    padding: 60px 0; /* Padding vertical apenas, horizontal controlado abaixo */
+}
+
+/* Container centralizado */
+.profile-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* Alinha ao topo */
+    gap: 60px; /* Espaço entre a coluna da foto e o texto */
+    max-width: 1000px;
+    width: 100%;
+    padding: 0 40px; /* Padding lateral no Desktop */
+    box-sizing: border-box; /* Garante que o padding não estoure a largura */
+}
+
+/* --- COLUNA ESQUERDA (Identidade) --- */
+.profile-identity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-shrink: 0; /* Não deixa encolher */
+    width: 250px; /* Largura fixa para a coluna da esquerda */
+}
+
+.profile-img-container {
+    width: 200px;
+    height: 200px;
+    padding: 5px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+    margin-bottom: 20px; /* Espaço entre foto e nome */
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.role {
+    color: var(--accent-color);
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.5;
+    background-color: rgba(1, 135, 95, 0.08);
+    padding: 8px 16px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+/* --- COLUNA DIREITA (Bio) --- */
+.profile-bio {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 10px; /* Leve ajuste para alinhar visualmente com a foto */
+}
+
+.about-text {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 1.05rem;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+}
+
+/* --- BOTÕES --- */
+.contact-links {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.btn-contact {
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.btn-contact:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.linkedin { background-color: var(--linkedin-color); }
+.github { background-color: var(--github-color); }
+.email { background-color: var(--accent-color); }
+
+/* --- SEPARADOR --- */
+.divider {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box; /* Importante para padding */
+}
+
+.divider span {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* --- GRID DE PROJETOS --- */
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px 60px; /* Padding geral */
+    box-sizing: border-box;
+}
+
+.app-card {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid transparent;
+}
+
+.app-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.15);
+}
+
+.app-header {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.app-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 16px;
+    object-fit: cover;
+    margin-right: 16px;
+    background-color: #f1f1f1;
+    border: 1px solid #eee;
+    flex-shrink: 0;
+}
+
+.app-info { flex-grow: 1; }
+
+.app-info h2 {
+    font-size: 1.2rem;
+    margin: 0 0 4px 0;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.app-category {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.app-tech { font-size: 0.8rem; color: #888; display: block; }
+
+.app-desc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex-grow: 1;
+}
+
+.action-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: auto;
+}
+
+.install-btn {
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.app-card:hover .install-btn {
+    background-color: rgba(1, 135, 95, 0.1);
+}
+
+/* --- RESPONSIVIDADE (CELULAR) --- */
+@media (max-width: 850px) {
+    .profile-header {
+        padding: 40px 0; /* Reduz altura do header no mobile */
+    }
+
+    .profile-content {
+        flex-direction: column; /* Empilha: Foto em cima, Bio embaixo */
+        align-items: center;
+        gap: 30px;
+        padding: 0 24px; /* AQUI ESTÁ A CORREÇÃO DO PADDING NO MOBILE */
+    }
+
+    .profile-identity {
+        width: 100%;
+        border-bottom: 1px solid #eee; /* Linha sutil separando identidade da bio */
+        padding-bottom: 25px;
+        margin-bottom: 0;
+    }
+
+    .profile-bio {
+        text-align: center; /* Centraliza texto no celular */
+        width: 100%;
+    }
+
+    .about-text {
+        text-align: left; /* Mantém o texto alinhado à esquerda para leitura, ou center se preferir */
+        font-size: 1rem;
+    }
+
+    .contact-links {
+        justify-content: center; /* Centraliza botões */
+    }
+    
+    .btn-contact {
+        width: 100%; /* Botões ocupam largura total no mobile para facilitar o toque */
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    h1 { font-size: 1.8rem; }
+    
+    .app-card { padding: 20px; }
+}
